@@ -2,13 +2,6 @@ package synergy.demoservlet;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -35,6 +28,7 @@ public class WelcomeServlet extends HttpServlet {
         out.println("<html><head><title>Добро пожаловать!</title></head><body>");
         if (username != null) {
             out.println("<h2>Добро пожаловать, " +  username + "!</h2>");
+            out.println("<a href='profile'>Перейти в профиль</a><br>");
         } else {
             out.println("<h2>Добро пожаловать!</h2>");
         }
@@ -45,4 +39,3 @@ public class WelcomeServlet extends HttpServlet {
     public void destroy() {
     }
 }
-

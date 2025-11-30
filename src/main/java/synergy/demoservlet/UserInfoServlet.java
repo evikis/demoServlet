@@ -2,13 +2,6 @@ package synergy.demoservlet;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
@@ -31,13 +24,14 @@ public class UserInfoServlet extends HttpServlet {
             out.println("<p><strong>Имя пользователя: </strong>" + username + "</p>");
             out.println("<p><strong>Время создания сессии: </strong>" + new Date(session.getCreationTime()) + "</p>");
             out.println("<p><strong>ID сессии: </strong>" + session.getId() + "</p>" );
+            out.println("<br><a href='profile'>Перейти в профиль</a>");
         } else {
             out.println("<p>Пользователь не авторизован. <a href='login'>Войти</a></p>");
         }
+        out.println("<br><a href='welcome'>На главную</a>");
         out.println("</body></html>");
     }
 
     public void destroy() {
     }
 }
-

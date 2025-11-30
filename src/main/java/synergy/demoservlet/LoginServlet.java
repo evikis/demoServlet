@@ -12,7 +12,6 @@ public class LoginServlet extends HttpServlet {
     private Map<String, String> users;
     @Override
     public void init() throws ServletException {
-        // Инициализация списка пользователейcdcd
         users = new HashMap<>();
         users.put("user1", "password1");
         users.put("user2", "password2");
