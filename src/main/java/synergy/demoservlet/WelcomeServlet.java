@@ -5,12 +5,16 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static java.lang.System.out;
+
 public class WelcomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
+
+        out.println("<a href='catalog'>Перейти в каталог товаров</a><br>");
 
         String username = null;
         Cookie[] cookies = req.getCookies();
